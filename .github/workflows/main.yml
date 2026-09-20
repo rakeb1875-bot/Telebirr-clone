@@ -27,6 +27,9 @@ jobs:
       - name: Get dependencies
         run: flutter pub get
 
+      - name: Enable web support
+        run: flutter create . --platforms web
+
       - name: Build Flutter web
         run: flutter build web --release --base-href "/${{ github.event.repository.name }}/"
 
